@@ -1,2 +1,2 @@
 # libpng
-limping sources to package them for cocoapods
+libpng sources to package them for cocoapods
