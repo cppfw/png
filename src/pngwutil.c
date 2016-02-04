@@ -215,7 +215,7 @@ png_text_compress(png_structp png_ptr,
    if (compression == PNG_TEXT_COMPRESSION_NONE)
    {
        comp->input = text;
-       comp->input_len = text_len;
+       comp->input_len = (int)text_len;
        return((int)text_len);
    }
 
@@ -1575,9 +1575,9 @@ png_write_pCAL(png_structp png_ptr, png_charp purpose, png_int_32 X0,
       null terminator for the last parameter. */
    for (i = 0; i < nparams; i++)
    {
-      params_len[i] = png_strlen(params[i]) + (i == nparams - 1 ? 0 : 1);
+      params_len[i] = (png_uint_32)(png_strlen(params[i]) + (i == nparams - 1 ? 0 : 1));
       png_debug2(3, "pCAL parameter %d length = %lu", i,
-        (unsigned long) params_len[i]);
+        (png_uint_32) params_len[i]);
       total_len += (png_size_t)params_len[i];
    }
 
@@ -2103,7 +2103,7 @@ png_write_find_filter(png_structp png_ptr, png_row_infop row_info)
    png_bytep prev_row, row_buf;
    png_uint_32 mins, bpp;
    png_byte filter_to_do = png_ptr->do_filter;
-   png_uint_32 row_bytes = row_info->rowbytes;
+   png_uint_32 row_bytes = (png_uint_32)(row_info->rowbytes);
 #ifdef PNG_WRITE_WEIGHTED_FILTER_SUPPORTED
    int num_p_filters = (int)png_ptr->num_prev_filters;
 #endif 
