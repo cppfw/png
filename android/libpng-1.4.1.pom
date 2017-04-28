@@ -3,30 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.igagis</groupId>
-  <artifactId>libsvgdom</artifactId>
-  <version>$(version)</version>
+  <artifactId>libpng</artifactId>
+  <version>1.4.1</version>
   <packaging>aar</packaging>
-  <dependencies>
-	  <dependency>
-		  <groupId>io.github.igagis</groupId>
-		  <artifactId>libutki</artifactId>
-		  <version>[1.1.7,)</version>
-		  <type>aar</type>
-		  <scope>compile</scope>
-	  </dependency>
-	  <dependency>
-		  <groupId>io.github.igagis</groupId>
-		  <artifactId>libpapki</artifactId>
-		  <version>[1.0.34,)</version>
-		  <type>aar</type>
-		  <scope>compile</scope>
-	  </dependency>
-	  <dependency>
-		  <groupId>org.pugixml</groupId>
-		  <artifactId>pugixml</artifactId>
-		  <version>[1.8,)</version>
-		  <type>aar</type>
-		  <scope>compile</scope>
-	  </dependency>
-  </dependencies>
 </project>
