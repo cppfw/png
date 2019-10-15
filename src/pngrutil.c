@@ -208,7 +208,7 @@ png_inflate(png_structp png_ptr, const png_byte *data, png_size_t size,
    png_size_t count = 0;
 
    png_ptr->zstream.next_in = (png_bytep)data; /* const_cast: VALID */
-   png_ptr->zstream.avail_in = (uint)size;
+   png_ptr->zstream.avail_in = (unsigned)size;
 
    while (1)
    {
@@ -218,7 +218,7 @@ png_inflate(png_structp png_ptr, const png_byte *data, png_size_t size,
        * after every inflate call.
        */
       png_ptr->zstream.next_out = png_ptr->zbuf;
-      png_ptr->zstream.avail_out = (uint)png_ptr->zbuf_size;
+      png_ptr->zstream.avail_out = (unsigned)png_ptr->zbuf_size;
 
       ret = inflate(&png_ptr->zstream, Z_NO_FLUSH);
       avail = (int)(png_ptr->zbuf_size - png_ptr->zstream.avail_out);
