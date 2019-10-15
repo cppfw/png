@@ -14,7 +14,7 @@ configurations {
 nuget{
 	nuspec{
 		id = libpng_static;
-		version: 1.4.1.1;
+		version: 1.4.1.2;
 		title: libpng library;
 		authors: {libpng team};
 		owners: {Ivan Gagis};
@@ -37,7 +37,7 @@ nuget{
 	files {
 		//this is needed to put headers in the base folder
 		include: {
-			"..\*.h"
+			"..\src\*.h"
 		};
 
 		//==== v141 tools ====
