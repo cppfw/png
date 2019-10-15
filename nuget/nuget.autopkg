@@ -1,0 +1,86 @@
+configurations {
+	UserPlatformToolset {
+		// Needed because autopackage lacks VS2015+ support
+		key = "PlatformToolset";
+		choices: "v141,v142";
+	};
+
+	RuntimeLibrary {
+		key = "RuntimeLibrary"; // This is the key you can find in .vcxproj file
+		choices: "MultiThreaded,MultiThreadedDebug,MultiThreadedDLL,MultiThreadedDebugDLL"; // these choices must be valid values for .vcxproj file
+	};
+}
+
+nuget{
+	nuspec{
+		id = libpng_static;
+		version: 1.4.1.1;
+		title: libpng library;
+		authors: {libpng team};
+		owners: {Ivan Gagis};
+		licenseUrl: "https://raw.githubusercontent.com/igagis/libpng/master/LICENSE";
+		projectUrl: "https://github.com/igagis/libpng";
+		iconUrl: "https://github.com/igagis/libpng/blob/master/logo.svg";
+		requireLicenseAcceptance:false;
+		summary: PNG library;
+
+		description: @"Portable Network Graphics library. When using v142 tools, do not forget to set the 'Runtime Library' in 'Project Master Settings -> C/C++ Settings', otherwise you'll get linker errors.";
+		releaseNotes: "Initial release";
+		copyright: see LICENSE file;
+		tags: { native, v141, v142};
+	}
+	dependencies {
+		packages : {
+			zlib_static/1.2.11.1;
+		};
+	}
+	files {
+		//this is needed to put headers in the base folder
+		include: {
+			"..\*.h"
+		};
+
+		//==== v141 tools ====
+
+		[x86,v141,release] {
+			lib: ..\msvs_solution\v141_Release\libpng.lib;
+		}
+		[x86,v141,debug] {
+			lib: ..\msvs_solution\v141_Debug\libpng.lib;
+		}
+		[x64,v141,release] {
+			lib: ..\msvs_solution\x64\v141_Release\libpng.lib;
+		}
+		[x64,v141,debug] {
+			lib: ..\msvs_solution\x64\v141_Debug\libpng.lib;
+		}
+
+		//==== v142 tools ====
+
+		[x86,v142,release,MultiThreaded] {
+			lib: ..\msvs_solution\v142_Release_MT\libpng.lib;
+		}
+		[x86,v142,debug,MultiThreadedDebug] {
+			lib: ..\msvs_solution\v142_Debug_MT\libpng.lib;
+		}
+		[x64,v142,release,MultiThreaded] {
+			lib: ..\msvs_solution\x64\v142_Release_MT\libpng.lib;
+		}
+		[x64,v142,debug,MultiThreadedDebug] {
+			lib: ..\msvs_solution\x64\v142_Debug_MT\libpng.lib;
+		}
+		[x86,v142,release,MultiThreadedDLL] {
+			lib: ..\msvs_solution\v142_Release_MD\libpng.lib;
+		}
+		[x86,v142,debug,MultiThreadedDebugDLL] {
+			lib: ..\msvs_solution\v142_Debug_MD\libpng.lib;
+		}
+		[x64,v142,release,MultiThreadedDLL] {
+			lib: ..\msvs_solution\x64\v142_Release_MD\libpng.lib;
+		}
+		[x64,v142,debug,MultiThreadedDebugDLL] {
+			lib: ..\msvs_solution\x64\v142_Debug_MD\libpng.lib;
+		}
+
+	}
+}
