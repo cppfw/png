@@ -2,7 +2,7 @@ configurations {
 	UserPlatformToolset {
 		// Needed because autopackage lacks VS2015+ support
 		key = "PlatformToolset";
-		choices: "v141,v142";
+		choices: "v140,v141,v142";
 	};
 
 	RuntimeLibrary {
@@ -14,7 +14,7 @@ configurations {
 nuget{
 	nuspec{
 		id = libpng_static;
-		version: 1.4.1.2;
+		version: 1.4.1.3;
 		title: libpng library;
 		authors: {libpng team};
 		owners: {Ivan Gagis};
@@ -31,7 +31,7 @@ nuget{
 	}
 	dependencies {
 		packages : {
-			zlib_static/1.2.11.1;
+			zlib_static/1.2.11.2;
 		};
 	}
 	files {
@@ -39,6 +39,21 @@ nuget{
 		include: {
 			"..\src\*.h"
 		};
+
+		//==== v140 tools ====
+
+		[x86,v140,release] {
+			lib: ..\msvs_solution\v140_Release\libpng.lib;
+		}
+		[x86,v140,debug] {
+			lib: ..\msvs_solution\v140_Debug\libpng.lib;
+		}
+		[x64,v140,release] {
+			lib: ..\msvs_solution\x64\v140_Release\libpng.lib;
+		}
+		[x64,v140,debug] {
+			lib: ..\msvs_solution\x64\v140_Debug\libpng.lib;
+		}
 
 		//==== v141 tools ====
 
