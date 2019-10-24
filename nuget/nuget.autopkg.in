@@ -37,7 +37,7 @@ nuget{
 	files {
 		//this is needed to put headers in the base folder
 		include: {
-			"..\src\*.h"
+			"..\src\png\*.h"
 		};
 
 		//==== v140 tools ====
