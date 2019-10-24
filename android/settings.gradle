@@ -1,1 +1,1 @@
-include ':libpng'
+include ':png'
