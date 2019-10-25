@@ -37,6 +37,7 @@ nuget{
 	files {
 		//this is needed to put headers in the base folder
 		include: {
+			#destination = ${d_include}png;
 			"..\src\png\*.h"
 		};
 
