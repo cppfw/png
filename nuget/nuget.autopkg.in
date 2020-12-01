@@ -18,9 +18,9 @@ nuget{
 		title: libpng library;
 		authors: {libpng team};
 		owners: {Ivan Gagis};
-		licenseUrl: "https://raw.githubusercontent.com/igagis/libpng/master/LICENSE";
-		projectUrl: "https://github.com/igagis/libpng";
-		iconUrl: "https://github.com/igagis/libpng/blob/master/logo.svg";
+		licenseUrl: "https://raw.githubusercontent.com/cppfw/libpng/master/LICENSE";
+		projectUrl: "https://github.com/cppfw/libpng";
+		iconUrl: "https://github.com/cppfw/libpng/blob/master/logo.svg";
 		requireLicenseAcceptance:false;
 		summary: PNG library;
 
