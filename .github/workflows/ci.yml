@@ -40,7 +40,7 @@ jobs:
   #       run: autojobs=true dpkg-buildpackage --unsigned-source --unsigned-changes
   #     - name: deploy deb packages
   #       run: myci-deploy-debian-bintray.sh --owner cppfw --repo ${{ matrix.os }} --distro ${{ matrix.codename }} --component main --package $PACKAGE_NAME ../*.deb
-  #       if: matrix.package_type == 'deb' && startsWith(github.ref, 'refs/tags/')
+  #       # if: matrix.package_type == 'deb' && startsWith(github.ref, 'refs/tags/')
 ##### macosx #####
   # macosx:
   #   runs-on: macos-latest
@@ -61,7 +61,7 @@ jobs:
   #     run: make test autojobs=true
   #   - name: deploy
   #     run: myci-deploy-homebrew.sh --tap cppfw/tap
-  #     if: startsWith(github.ref, 'refs/tags/')
+  #     # if: startsWith(github.ref, 'refs/tags/')
 ##### ios #####
   ios:
     runs-on: macos-latest
@@ -120,7 +120,7 @@ jobs:
         myci-apply-version.sh -v $PACKAGE_VERSION *.aar.in --filename-only
     - name: deploy
       run: myci-deploy-maven-bintray.sh --owner cppfw --repo android --path io/github/cppfw --package $PACKAGE_NAME --version $PACKAGE_VERSION android/$PACKAGE_NAME-$PACKAGE_VERSION.aar
-      if: startsWith(github.ref, 'refs/tags/')
+      # if: startsWith(github.ref, 'refs/tags/')
 ##### msys2 #####
   # msys2:
   #   runs-on: windows-latest
@@ -166,7 +166,7 @@ jobs:
   #       for f in $(find msys2 -name "mingw-w64-${{ matrix.arch }}-$PACKAGE_NAME-*-any.pkg.*"); do
   #         myci-deploy-pacman-bintray.sh --owner cppfw --repo msys2 --path ${{ matrix.repo }} --database cppfw_${{ matrix.repo }} $f
   #       done
-  #     if: startsWith(github.ref, 'refs/tags/')
+  #     # if: startsWith(github.ref, 'refs/tags/')
 ##### msvs #####
   msvs:
     runs-on: windows-latest
