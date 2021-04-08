@@ -5,5 +5,5 @@ project 'png/png.xcodeproj'
 platform :ios, '8.0'
 
 target "png" do
-	pod 'zlib', '>= 1.2.11.3'
+	pod 'zlib', '>= 1.2.11.9'
 end
