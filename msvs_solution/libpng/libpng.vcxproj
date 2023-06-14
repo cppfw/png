@@ -845,21 +845,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\png\png.c" />
-    <ClCompile Include="..\..\src\png\pngerror.c" />
-    <ClCompile Include="..\..\src\png\pngget.c" />
-    <ClCompile Include="..\..\src\png\pngmem.c" />
-    <ClCompile Include="..\..\src\png\pngpread.c" />
-    <ClCompile Include="..\..\src\png\pngread.c" />
-    <ClCompile Include="..\..\src\png\pngrio.c" />
-    <ClCompile Include="..\..\src\png\pngrtran.c" />
-    <ClCompile Include="..\..\src\png\pngrutil.c" />
-    <ClCompile Include="..\..\src\png\pngset.c" />
-    <ClCompile Include="..\..\src\png\pngtrans.c" />
-    <ClCompile Include="..\..\src\png\pngwio.c" />
-    <ClCompile Include="..\..\src\png\pngwrite.c" />
-    <ClCompile Include="..\..\src\png\pngwtran.c" />
-    <ClCompile Include="..\..\src\png\pngwutil.c" />
+    <ClCompile Include="..\..\src\**\*.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -27,7 +27,7 @@ nuget{
 		description: @"Portable Network Graphics library. When using v142 tools, do not forget to set the 'Runtime Library' in 'Project Master Settings -> C/C++ Settings', otherwise you'll get linker errors.";
 		releaseNotes: "Initial release";
 		copyright: see LICENSE file;
-		tags: { native, v141, v142};
+		tags: { native, v141, v142, v143};
 	}
 	dependencies {
 		packages : {
