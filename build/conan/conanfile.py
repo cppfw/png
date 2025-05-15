@@ -4,8 +4,8 @@ from conan.tools.scm import Git
 from conan.tools.files import load, update_conandata, copy
 from conan.tools.layout import basic_layout
 
-class LibpngConan(ConanFile):
-	name = "libpng"
+class PngConan(ConanFile):
+	name = "png"
 	license = "MIT"
 	author = "Ivan Gagis <igagis@gmail.com>"
 	url = "http://github.com/cppfw/" + name
