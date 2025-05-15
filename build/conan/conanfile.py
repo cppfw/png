@@ -18,6 +18,8 @@ class PngConan(ConanFile):
 	generators = "AutotoolsDeps" # this will set CXXFLAGS etc. env vars
 	
 	def build_requirements(self):
+		self.requires("zlib/[>=1.3.1]", transitive_headers=True)
+		
 		self.tool_requires("prorab/[>=2.0.27]@cppfw/main")
 
 	def config_options(self):
