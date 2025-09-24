@@ -12,7 +12,27 @@ cmake_minimum_required(VERSION 3.4.1)
 
 set(name png)
 
-file(GLOB_RECURSE srcs "../../src/*.c")
+# file(GLOB_RECURSE srcs "../../src/*.c")
+set(srcs
+    ../../src/png/arm/arm_init.c
+    ../../src/png/arm/filter_neon_intrinsics.c
+    ../../src/png/arm/palette_neon_intrinsics.c
+    ../../src/png/png.c
+    ../../src/png/pngerror.c
+    ../../src/png/pngget.c
+    ../../src/png/pngmem.c
+    ../../src/png/pngpread.c
+    ../../src/png/pngread.c
+    ../../src/png/pngrio.c
+    ../../src/png/pngrtran.c
+    ../../src/png/pngrutil.c
+    ../../src/png/pngset.c
+    ../../src/png/pngtrans.c
+    ../../src/png/pngwio.c
+    ../../src/png/pngwrite.c
+    ../../src/png/pngwtran.c
+    ../../src/png/pngwutil.c
+)
 
 include (${ANDROID_GRADLE_NATIVE_BUNDLE_PLUGIN_MK})
 
